@@ -24,3 +24,8 @@ bundle install
 ./bin/rake db:migration
 ```
 
+## 4. Launch a sever
+
+```
+./bin/rails server
+```
