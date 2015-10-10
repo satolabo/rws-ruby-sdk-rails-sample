@@ -1,6 +1,6 @@
 # README
 
-This is a Rails application for demonstrating the gem `rakuten_web_service`. 
+This is a Rails application for demonstrating the gem [`rakuten_web_service`](https://github.com/rakuten-ws/rws-ruby-sdk).
 
 # Usage
 
