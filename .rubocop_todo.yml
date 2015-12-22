@@ -37,7 +37,7 @@ Style/ElseAlignment:
 # Offense count: 1
 # Cop supports --auto-correct.
 Style/EmptyLines:
-  Enabled: false
+  Enabled: true
 
 # Offense count: 1
 # Cop supports --auto-correct.
