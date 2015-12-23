@@ -1,5 +1,7 @@
 # README
 
+[![Join the chat at https://gitter.im/satoryu/rws-ruby-sdk-rails-sample](https://badges.gitter.im/satoryu/rws-ruby-sdk-rails-sample.svg)](https://gitter.im/satoryu/rws-ruby-sdk-rails-sample?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
+
 This is a Rails application for demonstrating the gem [`rakuten_web_service`](https://github.com/rakuten-ws/rws-ruby-sdk).
 
 # Usage
