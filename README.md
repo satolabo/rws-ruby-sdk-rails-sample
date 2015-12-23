@@ -1,5 +1,7 @@
 # README
 
+[![Build Status](https://travis-ci.org/satoryu/rws-ruby-sdk-rails-sample.svg?branch=master)](https://travis-ci.org/satoryu/rws-ruby-sdk-rails-sample)
+
 This is a Rails application for demonstrating the gem [`rakuten_web_service`](https://github.com/rakuten-ws/rws-ruby-sdk).
 
 # Usage
