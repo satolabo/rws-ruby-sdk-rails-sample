@@ -17,7 +17,7 @@ Lint/HandleExceptions:
 # Offense count: 29
 # Configuration parameters: AllowURI, URISchemes.
 Metrics/LineLength:
-  Max: 130
+  Max: 80
 
 # Offense count: 5
 Style/Documentation:
@@ -37,7 +37,7 @@ Style/ElseAlignment:
 # Offense count: 1
 # Cop supports --auto-correct.
 Style/EmptyLines:
-  Enabled: false
+  Enabled: true
 
 # Offense count: 1
 # Cop supports --auto-correct.
