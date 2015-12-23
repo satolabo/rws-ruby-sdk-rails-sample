@@ -6,6 +6,11 @@ rvm:
   - 2.2.3
   - ruby-head
 
+before_script:
+  - bundle exec rake db:create
+  - bundle exec rake db:migrate
+  - bundle exec rake db:test:prepare
+
 matrix:
   allow_failures:
     - rvm: ruby-head
