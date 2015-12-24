@@ -1,0 +1,23 @@
+language: ruby
+
+sudo: false
+
+rvm:
+  - 2.2.3
+  - ruby-head
+
+before_script:
+  - bundle exec rake db:create
+  - bundle exec rake db:migrate
+  - bundle exec rake db:test:prepare
+
+matrix:
+  allow_failures:
+    - rvm: ruby-head
+
+notifications:
+  hipchat:
+    rooms:
+      - secure: "P4Nw9bd19sqibrLepjSQg9DfL8EI8tPf3FsLqlRP20kJRh7lsWejFGPSmL1dLOtMx/d7qGZRm65YhiDrcW1vGm/fWzOYrtBJ/m6C/qVtXAT9e0MQrRqjx3UqZEgHEmUigDUT3K6a+vdeUc0VlIZ0Tx3Z/sRwvxz5bghs5jOqnBxlmKiptXroqIKZoqb6b1OBQWY71WVfTB1DsLocGUlSG3WN9d2SXzcb/a+lE/fyzjhSnE49fKqTBuSwRk+rYB1pjvUAfAo9rMoytW/+AF+o64KSht9TAt95KI9SidwQeSI+yY7XCXHE8tugaf/jkI+nXEtkeWjlFkSYcFc5QGyb4+HbXkvIdLX0x33zZff85hVpJMW51J4FZNpkZOB47AzLZQ4oSb5mdOhOycnS0Dtoii/HSO+GOSc0ku/iAgaVXt7wb2Ax4VEn3PQtUHI+E4/Sg0rH84QwfbplYoJb5JaOMAtqc9S/Wpp1MxlHLfq6VRFnXQWB+548sL9T1j8vHCpAHYrMpvkciaV1yf6kzIeOq0xYXsuqoltZd92wXGW4gNQ3P77jaCuSlDG5di2GNz/qXMZRBMwNcoL2LOjAfjgHi7/4A4NHlQOK3DAkutFCGEDbbJNTqY49cWBHMI7BosWyfaOKRQ0eVuBivqA/nRq9n7tTVrF8hFzLo89vg9bY8kM="
+    notify: true
+   
