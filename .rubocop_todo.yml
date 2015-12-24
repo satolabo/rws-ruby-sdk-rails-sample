@@ -62,3 +62,6 @@ Style/MultilineOperationIndentation:
 # Configuration parameters: EnforcedStyle, SupportedStyles.
 Style/StringLiterals:
   Enabled: false
+
+Style/CommentIndentation:
+  Enabled: false
