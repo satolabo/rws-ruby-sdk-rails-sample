@@ -1,0 +1,11 @@
+development:
+  application_id: DEV_APPLICATION_ID
+  affiliate_id: DEV_AFFILIATE_ID
+
+test:
+  application_id: TEST_APPLICATION_ID
+  affiliate_id: TEST_AFFILIATE_ID
+
+production:
+  application_id: <%= ENV['RWS_APPLICATION_ID'] %>
+  affiliate_id: <%= ENV['RWS_AFFILIATE_ID'] %>
