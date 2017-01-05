@@ -8,4 +8,9 @@ AllCops:
     - db/**/*
 
 Lint/EndAlignment:
+  Enabled: true
   AlignWith: variable
+
+Lint/HandleExceptions:
+  Enabled: true
+  StyleGuide: '#dont-hide-exceptions'
