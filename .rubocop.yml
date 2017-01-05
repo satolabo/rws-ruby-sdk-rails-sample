@@ -6,3 +6,6 @@ AllCops:
   Exclude:
     - bin/**/*
     - db/**/*
+
+Lint/EndAlignment:
+  AlignWith: variable
