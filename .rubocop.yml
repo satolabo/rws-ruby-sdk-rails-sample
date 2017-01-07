@@ -36,3 +36,7 @@ Style/IndentationWidth:
 
 Style/MultilineOperationIndentation:
   Enabled: false
+
+Style/StringLiterals:
+  Enabled: true
+  EnforcedStyle: double_quotes
