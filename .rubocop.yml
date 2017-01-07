@@ -6,3 +6,37 @@ AllCops:
   Exclude:
     - bin/**/*
     - db/**/*
+
+Lint/EndAlignment:
+  Enabled: true
+  AlignWith: variable
+
+Lint/HandleExceptions:
+  Enabled: true
+  StyleGuide: '#dont-hide-exceptions'
+
+Style/Documentation:
+  Enabled: false
+
+Style/DotPosition:
+  Enabled: true
+  EnforcedStyle: trailing
+
+Style/ElseAlignment:
+  Enabled: true
+
+Style/EmptyLines:
+  Enabled: true
+
+Style/EmptyLinesAroundBlockBody:
+  Enabled: false
+
+Style/IndentationWidth:
+  Enabled: true
+
+Style/MultilineOperationIndentation:
+  Enabled: false
+
+Style/StringLiterals:
+  Enabled: true
+  EnforcedStyle: double_quotes
