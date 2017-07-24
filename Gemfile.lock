@@ -124,7 +124,7 @@ GEM
     rakuten_web_service-rails (0.3.0)
       rails (> 4.2, < 5.1.0)
       rakuten_web_service (~> 1.4.0)
-    rdoc (4.2.0)
+    rdoc (4.3.0)
     rspec-core (3.4.1)
       rspec-support (~> 3.4.0)
     rspec-expectations (3.4.0)
@@ -212,4 +212,4 @@ RUBY VERSION
    ruby 2.3.0p0
 
 BUNDLED WITH
-   1.12.5
+   1.15.3
