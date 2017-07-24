@@ -13,7 +13,7 @@ RSpec.describe ItemsController, type: :controller do
 
       expect(assigns[:items]).to be_empty
     end
-    
+
     context "When given keyword" do
       let(:keyword) { "ruby" }
       let(:items) { create_list(:rws_ichiba_item, 10) }
