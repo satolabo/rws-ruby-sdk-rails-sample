@@ -16,7 +16,7 @@ RSpec.describe ItemsController, type: :controller do
     
     context 'When given keyword' do
       let(:keyword) { 'ruby' }
-      let(:items) { 10.times.map { double(:item) } }
+      let(:items) { create_list(:rws_ichiba_item, 10) }
 
       before do
         expect(RakutenWebService::Ichiba::Item).to receive(:search).with(keyword: keyword, imageFlag: 1).and_return(items)
