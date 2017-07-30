@@ -30,6 +30,9 @@ RSpec.describe ItemsController, type: :controller do
       it "should assign returned 10 objects as items" do
         expect(assigns[:items]).to be_eql(items)
       end
+      it "should assign the given keyword as @keyword" do
+        expect(assigns[:keyword]).to be_eql(keyword)
+      end
     end
   end
 end
