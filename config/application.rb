@@ -35,6 +35,7 @@ module RwsRubySdkRailsSample
     config.generators do |g|
       g.test_framework :rspec, view_specs: false, helper_specs: false
       g.fixture_replacement :factory_girl
+      g.template_engine = :haml
     end
   end
 end
