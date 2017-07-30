@@ -134,10 +134,10 @@ GEM
       thor (>= 0.18.1, < 2.0)
     rainbow (2.0.0)
     rake (10.4.2)
-    rakuten_web_service (1.4.1)
-    rakuten_web_service-rails (0.3.0)
-      rails (> 4.2, < 5.1.0)
-      rakuten_web_service (~> 1.4.0)
+    rakuten_web_service (1.5.0)
+    rakuten_web_service-rails (0.4.0)
+      rails (> 4.2, < 5.2.0)
+      rakuten_web_service (> 1.4.0, < 1.6.0)
     rdoc (4.3.0)
     rspec-core (3.4.1)
       rspec-support (~> 3.4.0)
@@ -216,7 +216,7 @@ DEPENDENCIES
   pg
   rails (= 4.2.5)
   rails_12factor
-  rakuten_web_service-rails (~> 0.3.0)
+  rakuten_web_service-rails (~> 0.4.0)
   rspec-rails
   rubocop
   sass-rails (~> 5.0)
