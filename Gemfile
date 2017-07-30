@@ -50,7 +50,7 @@ group :development do
   gem "spring"
 end
 
-gem "rakuten_web_service-rails", "~> 0.3.0"
+gem "rakuten_web_service-rails", "~> 0.4.0"
 gem "pg"
 
 group :production do
