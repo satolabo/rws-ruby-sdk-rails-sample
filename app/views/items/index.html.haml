@@ -1,8 +1,11 @@
 %h1 商品一覧
-= form_tag(items_path, method: :get) do
-  = search_field_tag :keyword
-  = submit_tag '検索'
-%table
+= form_tag(items_path, method: :get, class: 'form-inline') do
+  .form-group
+    %label{for: 'keyword'} キーワード
+    = search_field_tag :keyword, @keyword, class: 'form-control'
+  = submit_tag '検索', class: 'btn btn-default'
+
+%table.table
   %thead
     %tr
       %th
