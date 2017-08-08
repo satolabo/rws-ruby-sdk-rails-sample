@@ -1,11 +1,21 @@
-%h1 商品一覧
+%nav.navbar.navbar-default.navbar-fixed-top
+  .container-fluid
+    .navbar-header
+      %a.navbar-brand{href: "/"} Rakuten Web Service Demo App
 
-= form_tag(items_path, method: :get, class: 'form-inline') do
-  .input-group
-    = search_field_tag :keyword, @keyword, class: 'form-control'
-    %span.input-group-btn
-      %button.btn.btn-default
-        %i.glyphicon.glyphicon-search
+    = form_tag(items_path, method: :get, class: 'navbar-form form-inline') do
+      .input-group
+        = search_field_tag :keyword, @keyword, class: 'form-control'
+        %span.input-group-btn
+          %button.btn.btn-default.dropdown-toggle.genre{type: 'button', 'data-toggle' => 'dropdown'}
+            Genre
+            %span.caret
+          %ul.dropdown-menu
+            - @genres.each do |genre|
+              %li 
+                %a.genre{href: "#", 'data-genre-id' => genre.id}= genre.name
+          %button.btn.btn-default
+            %i.glyphicon.glyphicon-search
 
 .container
   %table.table#search_results

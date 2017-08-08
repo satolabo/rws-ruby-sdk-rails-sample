@@ -1,4 +1,6 @@
 class ItemsController < ApplicationController
+  before_action :set_genres
+
   def index
     @keyword = params[:keyword]
 
@@ -8,5 +10,10 @@ class ItemsController < ApplicationController
     else
       []
     end
+  end
+
+  private
+  def set_genres
+    @genres = RakutenWebService::Ichiba::Genre.root.children
   end
 end

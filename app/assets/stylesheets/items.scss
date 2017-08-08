@@ -18,6 +18,11 @@
     text-overflow: ellipsis;
 }
 
+button.genre {
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+}
+
 .item {
     height: 15em;
     overflow-y: hidden;
