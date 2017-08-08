@@ -1,16 +1,32 @@
 %h1 商品一覧
 
 = form_tag(items_path, method: :get, class: 'form-inline') do
-  .form-group
-    %label{for: 'keyword'} キーワード
+  .input-group
     = search_field_tag :keyword, @keyword, class: 'form-control'
-  = submit_tag '検索', class: 'btn btn-default'
+    %span.input-group-btn
+      %button.btn.btn-default
+        %i.glyphicon.glyphicon-search
 
-.container-fluid#search_results
-  .row
+.container
+  %table.table#search_results
     - @items.each do |item|
-      .item.col-xs-6.col-lg-4
-        %a{href: item.url, target: '_blank'}
-          = image_tag item.medium_image_urls[0]['imageUrl'], class: 'img-responsive'
-        %h5
-          %a{href: item.url, target: '_blank'}= item.name
+      %tr
+        %td.item_thumb
+          %a.thumbnail{href: item.url, target: '_blank'}
+            = image_tag item.medium_image_urls[0]['imageUrl'], class: 'img-responsive'
+        %td
+          %h5.item_name
+            %a{href: item.url, target: '_blank'}= item.name
+          %p= item.catchcopy
+
+          %i.text-danger.glyphicon.glyphicon-home
+          %a{href: item.shop.url, target: '_blank'}= item.shop.name
+        %td
+          %p
+            %span.h2= item.price
+            円
+          - if item.postage?
+            %span.label.label-danger Free Postage
+          - if item.credit_card?
+            %span.label.label-danger
+              %i.glyphicon.glyphicon-credit-card

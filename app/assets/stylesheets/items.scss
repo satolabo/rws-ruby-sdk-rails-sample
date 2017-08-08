@@ -6,6 +6,18 @@
     margin-top: 50px;
 }
 
+#search_results .item_thumb {
+    height: 128px;
+    width: 128px;
+}
+
+#search_results .item_name {
+    width: 50em;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
 .item {
     height: 15em;
     overflow-y: hidden;
