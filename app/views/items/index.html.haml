@@ -11,7 +11,7 @@
             Genre
             %span.caret
           %ul.dropdown-menu
-            - @genres.each do |genre|
+            - @genre.children.each do |genre|
               %li 
                 %a.genre{href: "#", 'data-genre-id' => genre.id}= genre.name
           %button.btn.btn-default
