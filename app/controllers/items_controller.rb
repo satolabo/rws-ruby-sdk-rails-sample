@@ -14,6 +14,6 @@ class ItemsController < ApplicationController
 
   private
   def set_genres
-    @genres = RakutenWebService::Ichiba::Genre.root.children
+    @genre = RakutenWebService::Ichiba::Genre.root
   end
 end

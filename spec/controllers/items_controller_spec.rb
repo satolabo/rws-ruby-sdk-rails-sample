@@ -3,6 +3,12 @@ require "rails_helper"
 RSpec.describe ItemsController, type: :controller do
 
   describe "GET #index" do
+    let(:genre) { double(:genre, children: []) }
+
+    before do
+      allow(RWS::Ichiba::Genre).to receive(:root).and_return(genre)
+    end
+
     it "returns http success" do
       get :index
       expect(response).to have_http_status(:success)
