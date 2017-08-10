@@ -3,7 +3,7 @@ require "rails_helper"
 RSpec.describe ItemsController, type: :controller do
 
   describe "GET #index" do
-    let(:genre) { double(:genre, children: []) }
+    let(:genre) { create(:rws_ichiba_genre, :root, children: []) }
 
     before do
       allow(RWS::Ichiba::Genre).to receive(:root).and_return(genre)
@@ -25,7 +25,9 @@ RSpec.describe ItemsController, type: :controller do
       let(:items) { create_list(:rws_ichiba_item, 10) }
 
       before do
-        expect(RakutenWebService::Ichiba::Item).to receive(:search).with(keyword: keyword, imageFlag: 1).and_return(items)
+        expect(RakutenWebService::Ichiba::Item).to receive(:search).
+          with(keyword: keyword, genre_id: genre.id, imageFlag: 1).
+          and_return(items)
 
         get :index, keyword: keyword
       end
@@ -38,6 +40,27 @@ RSpec.describe ItemsController, type: :controller do
       end
       it "should assign the given keyword as @keyword" do
         expect(assigns[:keyword]).to be_eql(keyword)
+      end
+    end
+
+    context "When given genre_id" do
+      let(:genre) { create(:rws_ichiba_genre, children: []) }
+      let(:keyword) { "foo" }
+      let(:items) { create_list(:rws_ichiba_item, 10) }
+
+      before do 
+        expect(RakutenWebService::Ichiba::Item).to receive(:search).
+          with(keyword: keyword, genre_id: genre.id, imageFlag: 1).
+          and_return(items)
+        expect(RakutenWebService::Ichiba::Genre).to receive(:new).
+          with(genre.id.to_s).
+          and_return(genre)
+      end
+
+      it "should return http success" do
+        get :index, keyword: keyword, genre_id: genre.id
+
+        expect(response).to have_http_status(:success)
       end
     end
   end

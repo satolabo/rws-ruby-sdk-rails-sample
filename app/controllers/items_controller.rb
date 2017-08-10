@@ -6,7 +6,7 @@ class ItemsController < ApplicationController
 
     @items = if @keyword.present?
       RWS::Ichiba::Item.
-        search(keyword: params[:keyword], imageFlag: 1).first(10)
+        search(keyword: params[:keyword], genre_id: @genre.id, imageFlag: 1).first(10)
     else
       []
     end
@@ -14,6 +14,10 @@ class ItemsController < ApplicationController
 
   private
   def set_genres
-    @genre = RakutenWebService::Ichiba::Genre.root
+    if genre_id = params[:genre_id]
+      @genre = RakutenWebService::Ichiba::Genre.new(genre_id)
+    else
+      @genre = RakutenWebService::Ichiba::Genre.root
+    end
   end
 end
