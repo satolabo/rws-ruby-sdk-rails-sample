@@ -27,7 +27,7 @@ RSpec.describe ItemsController, type: :controller do
       before do
         expect(RakutenWebService::Ichiba::Item).to receive(:search).with(keyword: keyword, imageFlag: 1).and_return(items)
 
-        get :index, keyword: keyword
+        get :index, params: { keyword: keyword }
       end
 
       it "should return http success" do
