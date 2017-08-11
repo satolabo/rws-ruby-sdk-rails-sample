@@ -1,3 +1,4 @@
+# frozen_string_literal: true
 require "rails_helper"
 
 RSpec.describe ItemsController, type: :controller do
@@ -48,7 +49,7 @@ RSpec.describe ItemsController, type: :controller do
       let(:keyword) { "foo" }
       let(:items) { create_list(:rws_ichiba_item, 10) }
 
-      before do 
+      before do
         expect(RakutenWebService::Ichiba::Item).to receive(:search).
           with(keyword: keyword, genre_id: genre.id, imageFlag: 1).
           and_return(items)

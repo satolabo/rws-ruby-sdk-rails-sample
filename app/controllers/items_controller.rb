@@ -1,3 +1,4 @@
+# frozen_string_literal: true
 class ItemsController < ApplicationController
   before_action :set_genres
 
@@ -13,11 +14,12 @@ class ItemsController < ApplicationController
   end
 
   private
+
   def set_genres
-    if genre_id = params[:genre_id]
-      @genre = RakutenWebService::Ichiba::Genre.new(genre_id)
+    @genre = if params[:genre_id]
+      RakutenWebService::Ichiba::Genre.new(params[:genre_id])
     else
-      @genre = RakutenWebService::Ichiba::Genre.root
+      RakutenWebService::Ichiba::Genre.root
     end
   end
 end

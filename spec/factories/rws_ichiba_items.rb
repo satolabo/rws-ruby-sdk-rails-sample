@@ -1,3 +1,4 @@
+# frozen_string_literal: true
 FactoryGirl.define do
   factory :rws_ichiba_item, class: "RakutenWebService::Ichiba::Item" do
     skip_create
