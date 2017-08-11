@@ -30,7 +30,7 @@ RSpec.describe ItemsController, type: :controller do
           with(keyword: keyword, genre_id: genre.id, imageFlag: 1).
           and_return(items)
 
-        get :index, keyword: keyword
+        get :index, params: { keyword: keyword }
       end
 
       it "should return http success" do
