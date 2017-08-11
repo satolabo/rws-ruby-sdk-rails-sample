@@ -7,7 +7,8 @@ class ItemsController < ApplicationController
 
     @items = if @keyword.present?
       RWS::Ichiba::Item.
-        search(keyword: params[:keyword], genre_id: @genre.id, imageFlag: 1).first(10)
+        search(keyword: params[:keyword], genre_id: @genre.id, imageFlag: 1).
+        first(10)
     else
       []
     end
