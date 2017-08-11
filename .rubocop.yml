@@ -2,14 +2,15 @@ inherit_from:
   - ./.rubocop_todo.yml
 
 AllCops:
-  RunRailsCops: true
+  Rails:
+    Enabled: true
   Exclude:
     - bin/**/*
     - db/**/*
 
 Lint/EndAlignment:
   Enabled: true
-  AlignWith: variable
+  EnforcedStyleAlignWith: variable
 
 Lint/HandleExceptions:
   Enabled: true
