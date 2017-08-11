@@ -59,7 +59,7 @@ RSpec.describe ItemsController, type: :controller do
       end
 
       it "should return http success" do
-        get :index, keyword: keyword, genre_id: genre.id
+        get :index, params: { keyword: keyword, genre_id: genre.id }
 
         expect(response).to have_http_status(:success)
       end
