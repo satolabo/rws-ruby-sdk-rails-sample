@@ -15,25 +15,29 @@
 
     = submit_tag 'Search', class: 'btn btn-primary'
 
-  %table.table#search_results
-    - @items.each do |item|
-      %tr
-        %td.item_thumb
-          %a.thumbnail{href: item.url, target: '_blank'}
-            = image_tag item.medium_image_urls[0]['imageUrl'], class: 'img-responsive'
-        %td
-          %h5.item_name
-            %a{href: item.url, target: '_blank'}= item.name
-          %p= item.catchcopy
+  .table-responsible
+    %table.table#search_results
+      - @items.each do |item|
+        %tr
+          %td.item_thumb
+            %a.thumbnail{ href: item.url, target: '_blank' }
+              = image_tag item.medium_image_urls[0]['imageUrl'], class: 'img-responsive'
+          %td
+            %h5.item_name
+              %a{ href: item.url, target: '_blank' }= item.name
+            %p= item.catchcopy
 
-          %i.text-danger.glyphicon.glyphicon-home
-          %a{href: item.shop.url, target: '_blank'}= item.shop.name
-        %td
-          %p
-            %span.h2= item.price
-            円
-          - if item.postage?
-            %span.label.label-danger Free Postage
-          - if item.credit_card?
-            %span.label.label-danger
-              %i.glyphicon.glyphicon-credit-card
+            %i.text-danger.glyphicon.glyphicon-home
+            %a{ href: item.shop.url, target: '_blank' }= item.shop.name
+
+            - if item.review_count > 0
+              = pluralize(item.review_count, 'review')
+          %td
+            %p
+              %span.h2= item.price
+              円
+            - if item.postage?
+              %span.label.label-danger Free Postage
+            - if item.credit_card?
+              %span.label.label-danger
+                %i.glyphicon.glyphicon-credit-card
