@@ -38,22 +38,23 @@ gem "nokogiri", "1.6.6.2"
 
 group :development, :test do
   # Use sqlite3 as the database for Active Record
-  gem "sqlite3"
   gem "byebug"
-  gem "rails-controller-testing"
-  gem "rubocop", require: false
-  gem "rspec-rails"
   gem "factory_girl_rails"
+  gem "rails-controller-testing"
+  gem "rspec-rails"
+  gem "rubocop", require: false
+  gem "sqlite3"
 end
 
 group :development do
-  gem "web-console", "~> 2.0"
-
+  gem "debase", "0.2.2.beta10"
+  gem "ruby-debug-ide", "0.6.0"
   gem "spring"
+  gem "web-console", "~> 2.0"
 end
 
-gem "rakuten_web_service-rails", "~> 0.5.0"
 gem "pg"
+gem "rakuten_web_service-rails", "~> 0.5.0"
 
 group :production do
   gem "rails_12factor"
