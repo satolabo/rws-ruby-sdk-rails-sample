@@ -49,13 +49,6 @@
                 "${workspaceRoot}",
                 "${file}"
             ]
-        },
-        {
-            "name": "Cucumber",
-            "type": "Ruby",
-            "request": "launch",
-            "cwd": "${workspaceRoot}",
-            "program": "${workspaceRoot}/bin/cucumber"
         }
     ]
 }
