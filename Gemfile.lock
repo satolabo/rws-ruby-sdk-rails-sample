@@ -153,7 +153,7 @@ GEM
     rainbow (2.2.2)
       rake
     rake (12.0.0)
-    rakuten_web_service (1.6.0)
+    rakuten_web_service (1.6.1)
     rakuten_web_service-rails (0.5.0)
       rails (> 4.2, < 5.2.0)
       rakuten_web_service (> 1.4.0, < 1.7.0)
